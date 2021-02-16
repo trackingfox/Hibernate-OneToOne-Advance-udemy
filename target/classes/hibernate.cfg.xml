@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/studentdemo?useSSL=false</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+		<property name="show_sql">true</property>
+		
+		 <!-- JDBC connection pool settings ... using built-in test pool -->
+        <property name="connection.pool_size">1</property>
+
+		<!-- Enable this to generate tables from Entity classes. But not for production. -->
+		<property name="hibernate.hbm2ddl.auto">create</property>
+		<!-- Set the current session context -->
+		<property name="current_session_context_class">thread</property>
+
+		<mapping class="com.luv2code.hibernate.demo.entity.Instructor" />
+		<mapping class="com.luv2code.hibernate.demo.entity.InstructorDetail" />
+		<mapping class="com.luv2code.hibernate.demo.entity.Student" />
+	</session-factory>
+</hibernate-configuration>
